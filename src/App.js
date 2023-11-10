@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Diseases from './pages/Diseases/Diseases';
+import Quest from './pages/Questionnaire/Questionnaire';
+import Description from './pages/Description/Description';
+import QuestResult from './pages/Questionnaire/QuestResult';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+            <Routes>
+                <Route path='/' element={<Diseases />}></Route>
+                <Route path='/q' element={<Quest />}></Route>
+                <Route path='/d' element={<Description />}></Route>
+                <Route path='/r' element={<QuestResult />}></Route>
+            </Routes>
+        </Router>
     </div>
   );
 }
